@@ -561,9 +561,6 @@
                         style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">Impuesto
                     </th>
                     <th align="center" colspan="4"
-                        style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">Descuento
-                    </th>
-                    <th align="center" colspan="4"
                         style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">Importe
                     </th>
                 </tr>
@@ -725,8 +722,6 @@
                         <td align="center" colspan="4"
                             style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt; padding-top: 1px; padding-left: 0px; padding-right: 0px;">${impuestos_line_calc?string[",##0.00"]}</td>
                         <td align="center" colspan="4"
-                            style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt; padding-top: 1px; padding-left: 0px; padding-right: 0px;">${Conceptos.atributos.Descuento?number?string[",##0.00"]}</td>
-                        <td align="center" colspan="4"
                             style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt; padding-top: 1px; padding-left: 0px; padding-right: 0px;">${Conceptos.atributos.Importe?number?string[",##0.00"]}</td>
                     </tr>
                     <#if record.custbody_efx_fe_complemento_educativo?has_content && record.custbody_efx_fe_complemento_educativo == true && Conceptos.ComplementoConcepto.instEducativas.atributos.nombreAlumno?has_content>
@@ -799,9 +794,6 @@
                     </th>
                     <th align="center" colspan="4" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">
                         Impuesto
-                    </th>
-                    <th align="center" colspan="4" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">
-                        Descuento
                     </th>
                     <th align="center" colspan="4" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">
                         Importe
@@ -962,8 +954,6 @@
                     <td align="center" colspan="4"
                         style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt; padding-top: 1px; padding-left: 0px; padding-right: 0px;">${impuestos_line_calc?string[",##0.00"]}</td>
                     <td align="center" colspan="4"
-                        style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt; padding-top: 1px; padding-left: 0px; padding-right: 0px;">${dataXML.Conceptos.Concepto.atributos.Descuento?number?string[",##0.00"]}</td>
-                    <td align="center" colspan="4"
                         style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt; padding-top: 1px; padding-left: 0px; padding-right: 0px;">${dataXML.Conceptos.Concepto.atributos.Importe?number?string[",##0.00"]}</td>
                 </tr>
                 <#if record.custbody_efx_fe_complemento_educativo?has_content && record.custbody_efx_fe_complemento_educativo == true && dataXML.Conceptos.Concepto.ComplementoConcepto.instEducativas.atributos.nombreAlumno?has_content>
@@ -1040,9 +1030,6 @@
                     </th>
                     <th align="center" colspan="4" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">
                         Impuesto
-                    </th>
-                    <th align="center" colspan="4" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">
-                        Descuento
                     </th>
                     <th align="center" colspan="4"
                         style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">${item.amount@label}</th>
@@ -1324,25 +1311,7 @@
                         </#if>
 
                     </tr>
-                    <tr>
-                        <td colspan="1" style="font-size: 7pt;  border-color: #e3e3e3;border-left: 1px;">
-                            <b>Descuento</b></td>
-                        <#if dataXML?has_content>
-                            <td align="right" colspan="1" style="font-size: 7pt;">${dataXML.atributos.Descuento?number?string[",##0.00"]}</td>
-                        <#else>
-                            <#if descuento_total != 0>
-                                <td align="right" colspan="1"
-                                    style="font-size: 7pt;"><#if desglose_total_discount?has_content>${desglose_total_discount?number?string[",##0.00"]}</#if></td>
-                            <#else>
-                                <#if record.discounttotal != 0>
-                                    <td align="right" colspan="1" style="font-size: 7pt;">${record.discounttotal}</td>
-                                <#else>
-                                    <td align="right" colspan="1" style="font-size: 7pt;">0.00</td>
-                                </#if>
-                            </#if>
-                        </#if>
 
-                    </tr>
                     <tr>
                         <td colspan="1" style="font-size: 7pt;  border-color: #e3e3e3;border-left: 1px;"><b>Traslados</b></td>
                         <#if dataXML?has_content>
